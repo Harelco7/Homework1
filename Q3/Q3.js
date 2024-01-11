@@ -19,7 +19,7 @@ class Clock {
     
 
  
-      // Method to display the time in hh:mm:ss format
+      
       Show() {
         const HHMMDD = number=> {if (number<10) {
             return `0${number}`;
