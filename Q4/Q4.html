@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="Q4.js"></script>
+</head>
+<body onload="load()">
+    <h1>Points</h1>
+    <p id="points"></p>
+    <h1>Distance</h1>
+    <p id=distance></p>
+    
+
+<script>
+
+   
+    function load() {
+        let points = document.getElementById("points");
+        let distance = document.getElementById("distance");
+
+        p3 = new Point(10,10)
+        p4 = new Point(9,9)
+        p5 = new Point(8,8)
+        p6= new Point(20,44)
+        parray3 = [p3,p4,p5,p6]        
+        var result = checkDistance(parray3);
+
+        for (let i = 0; i < parray3.length; i++) {
+            points.innerHTML += `(${parray3[i].x},${parray3[i].y})<br>`  
+            
+        }
+
+        distance.innerHTML= `${checkDistance(parray3)}`
+        
+    }
+</script>
+</body>
+</html>

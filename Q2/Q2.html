@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Q2.js"></script>
+</head>
+<body>
+        <label>Name:</label>    
+        <input type="text" id="name">
+
+        <label>Color:</label>    
+        <input type="text" id="color">
+        
+        <label>Age:</label>    
+        <input type="number" id="age">
+        
+        <label>Weight:</label>    
+        <input type="number" id="weight"> 
+       
+        <label>Image:</label>    
+        <input type="file" id="img">
+
+
+
+        <button onclick="Add()">ADD</button>
+
+
+        <div id="ph">
+            <!-- <button onclick="Print()">Show</button>
+            <button onclick="Qu()">Quack</button> -->
+        </div>
+<br>
+        
+
+
+
+
+
+        <script>
+myDuck = new Duck();
+
+function Add() {
+ name = document.getElementById("name").value;
+ color = document.getElementById("color").value;
+ age = document.getElementById("age").value;
+ weight = document.getElementById("weight").value;
+ img = document.getElementById("img").value;
+
+  myDuck = new Duck(name,color,age,weight,img);
+
+
+document.getElementById("ph").innerHTML= `<button onclick="Print()">Show</button>
+                                            <button onclick="Qu()">Quack</button>`
+   
+
+}
+
+
+function Print() {
+    var newElement = document.createElement('p');
+    document.getElementById("ph").innerHTML=``;
+  newElement.innerHTML = myDuck.Show();
+  document.getElementById('ph').appendChild(newElement);
+    
+}
+
+function Qu() {
+    myDuck.Quack();
+}
+        </script>
+</body>
+</html>

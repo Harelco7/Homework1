@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script src="Q1.js"></script>
+   
+</head>
+<body>
+    <p>Put Your number</p>
+    <input type="number" id="input">
+    <button onclick="Input2counter()">Start</button>
+    <button onclick="Plus()">+</button>
+    <button onclick="Go()">Go</button>
+    <p id="ph">
+
+    </p>
+
+
+  <script>
+    
+     var myCounter = new Counter();
+        function Input2counter() {
+            var value = document.getElementById("input").value;
+            myCounter.Initialize(value);
+            console.log(myCounter.counter);
+        }
+
+        function Plus() {
+         myCounter.Increment();
+         document.getElementById("input").value = myCounter.counter;
+        }
+        function Go() {
+           
+            // לוקח את הערך שהמשתמש הכניס
+            var inputValue = document.getElementById('input').value;
+
+           
+           
+                //יוצר פיסקה חדשה
+                var newParagraph = document.createElement('p');
+
+                // יוצר משתנה של מספרים שהוא סטרינג ומשרשר בעזרת פור את המספר לסטרינג עם רווח 
+                var numbers = '';
+                for (var i = 1; i <= inputValue; i++) {
+                    numbers += i + ' ';
+                }
+                newParagraph.textContent = 'Numbers: ' + numbers;
+
+               //לוקח את הפיסקה ומכניס אותה לפסקה של מקום ריק 
+                document.getElementById('ph').append(newParagraph);
+            } 
+        ;
+        
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Q3.js"></script>
+</head>
+<body>
+    <label>Hour</label>
+    <input type="number" id="hour">
+    <label>Min</label>
+    <input type="number" id="min">
+    <label>Sec</label>
+    <input type="number" id="sec">
+    <label>Country</label>
+    <input type="text" id="country">
+
+    <button onclick="add()" >Send</button>
+
+    <div id="ph">
+
+    </div>
+
+
+
+    <script>
+
+        var times= [];
+
+        function add() {
+        let hour = document.getElementById("hour").value;
+        let min = document.getElementById("min").value;
+        let sec = document.getElementById("sec").value;
+        let country=document.getElementById("country").value;
+
+        var time = new Clock(hour,min,sec,country); 
+            times.push(time);
+
+            let inputs= ["hour","min","sec","country"]
+
+            inputs.forEach(id => {
+                document.getElementById(id).value=``;
+                
+            });
+
+            if (times.length===5) {
+
+              var newElement = document.createElement('p');
+              newElement.innerHTML = time.Show();
+              document.getElementById('ph').appendChild(newElement);
+              var newElement2 = document.createElement('p');
+              newElement2.innerHTML = time.Convert2sec(); ;
+              document.getElementById('ph').appendChild(newElement2);
+
+                
+               
+                
+            }
+        }
+    </script>
+</body>
+</html>
