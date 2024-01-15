@@ -27,11 +27,13 @@ class Duck {
             }
             console.log("Quack")
         }
-
+        
       
     }
 
 }
+
+
 
 
 
